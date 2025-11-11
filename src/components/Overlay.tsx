@@ -3,11 +3,11 @@ import { NavLink, Outlet } from "react-router";
 const Overlay = () => {
   return (
     <>
-      <div className="overlay fixed inset-0 p-8 flex flex-col gap-4 justify-between z-10">
+      <div className="overlay fixed inset-0 p-8 flex flex-col gap-4 justify-between z-10 pointer-events-none">
         <h1 className="font-bold italic tracking-tighter">
           R3F EXPERIMENTAL CAROUSEL
         </h1>
-        <div className="uppercase flex gap-5 tracking-tighter">
+        <div className="uppercase flex gap-5 tracking-tighter pointer-events-auto">
           <NavLink
             to="/"
             className={({ isActive }) =>
