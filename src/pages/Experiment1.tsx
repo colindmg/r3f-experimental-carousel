@@ -1,5 +1,7 @@
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import * as THREE from "three";
+import GLImage from "../components/GLImage";
 
 const Experiment1 = () => {
   return (
@@ -13,11 +15,12 @@ const Experiment1 = () => {
       }}
     >
       <OrbitControls />
-      <ambientLight intensity={3} />
-      <mesh>
-        <boxGeometry />
-        <meshStandardMaterial color="orange" />
-      </mesh>
+      <GLImage
+        index={0}
+        scale={[1, 1, 1]}
+        yOffset={0}
+        geometry={new THREE.PlaneGeometry(1, 1)}
+      />
     </Canvas>
   );
 };
