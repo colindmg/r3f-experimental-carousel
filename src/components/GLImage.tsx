@@ -40,7 +40,6 @@ const GLImage = forwardRef<THREE.Mesh, GLImageProps>(
         uniforms: {
           uTexture: { value: texture },
           uScrollSpeed: { value: 0.0 },
-
           uPlaneSizes: { value: new THREE.Vector2(scale[0], scale[1]) },
           uImageSizes: {
             value: new THREE.Vector2(imageSizes[0], imageSizes[1]),

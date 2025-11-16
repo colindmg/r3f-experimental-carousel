@@ -11,12 +11,12 @@ void main() {
   vec3 worldPosition = (modelMatrix * vec4(position, 1.0)).xyz;
 
   // X Displacement depending on the world position Y
-  float xDisplacement = uDisplacementStrength * cos(worldPosition.y * 0.4)/2. + 0.3;
-  pos.x += xDisplacement;
+  // float xDisplacement = uDisplacementStrength * cos(worldPosition.y * 0.4) / 2.0 + 0.3;
+  // pos.x += xDisplacement;
 
   // Y Displacement according to the scroll speed
-  float yDisplacement = -sin(uv.x * PI) * uScrollSpeed * 0.003;
-  pos.y += yDisplacement;
+  // float yDisplacement = -sin(uv.x * PI) * uScrollSpeed * 0.003;
+  // pos.y += yDisplacement;
 
   gl_Position = projectionMatrix * modelViewMatrix * vec4( pos, 1.0 );
 
