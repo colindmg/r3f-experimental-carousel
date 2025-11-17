@@ -1,6 +1,9 @@
+import { useFrame } from "@react-three/fiber";
+import { useLenis } from "lenis/react";
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
 import { IMAGE_LIST } from "../constants";
+import { mod } from "../utils";
 import GLImage from "./GLImage";
 
 interface CarouselProps {
@@ -15,6 +18,26 @@ const Carousel = ({ position, imageSize, gap }: CarouselProps) => {
   const planeGeometry = useMemo(() => {
     return new THREE.PlaneGeometry(1, 1, 16, 16);
   }, []);
+
+  const totalHeight =
+    IMAGE_LIST.length * gap + IMAGE_LIST.length * imageSize[1];
+
+  useFrame(() => {
+    imageRefs.current.forEach((ref) => {
+      if (!ref) return;
+      ref.position.y =
+        mod(ref.position.y + totalHeight / 2, totalHeight) - totalHeight / 2;
+    });
+  });
+
+  useLenis(({ velocity }) => {
+    imageRefs.current.forEach((ref) => {
+      if (ref) {
+        ref.position.y -= velocity * 0.005;
+      }
+    });
+    return velocity;
+  });
 
   return (
     <group position={position || [0, 0, 0]}>

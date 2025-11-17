@@ -1,4 +1,3 @@
-import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import Carousel from "../components/Carousel";
 
@@ -12,8 +11,11 @@ const Experiment1 = () => {
         left: 0,
         right: 0,
       }}
+      camera={{
+        position: [0, 0, 3],
+      }}
     >
-      <OrbitControls />
+      {/* <OrbitControls /> */}
       <Carousel imageSize={[1, 1]} gap={0.1} />
     </Canvas>
   );
