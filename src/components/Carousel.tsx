@@ -34,9 +34,10 @@ const Carousel = ({ position, imageSize, gap }: CarouselProps) => {
     imageRefs.current.forEach((ref) => {
       if (ref) {
         ref.position.y -= velocity * 0.005;
+        // @ts-expect-error ignore
+        ref.material.uniforms.uScrollSpeed.value = velocity * 0.005;
       }
     });
-    return velocity;
   });
 
   return (
@@ -47,6 +48,8 @@ const Carousel = ({ position, imageSize, gap }: CarouselProps) => {
           imageUrl={url}
           scale={[imageSize[0], imageSize[1], 1]}
           geometry={planeGeometry}
+          curveStrength={-0.5}
+          curveFrequency={2}
           position={[0, index * (imageSize[1] + gap), 0]}
           ref={(el) => {
             if (el) imageRefs.current[index] = el;

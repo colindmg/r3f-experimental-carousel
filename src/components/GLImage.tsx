@@ -8,7 +8,8 @@ interface GLImageProps {
   imageUrl?: string;
   scale: [number, number, number];
   position?: [number, number, number];
-  displacementStrength?: number;
+  curveStrength?: number;
+  curveFrequency?: number;
   geometry: THREE.PlaneGeometry;
 }
 
@@ -18,7 +19,8 @@ const GLImage = forwardRef<THREE.Mesh, GLImageProps>(
       imageUrl = "./images/img1.webp",
       scale,
       position = [0, 0, 0],
-      displacementStrength,
+      curveStrength,
+      curveFrequency,
       geometry,
     },
     forwardedRef
@@ -43,12 +45,13 @@ const GLImage = forwardRef<THREE.Mesh, GLImageProps>(
             value: new THREE.Vector2(imageSizes[0], imageSizes[1]),
           },
 
-          uDisplacementStrength: { value: displacementStrength || 0 },
+          uCurveStrength: { value: curveStrength || 0 },
+          uCurveFrequency: { value: curveFrequency || 0 },
         },
         vertexShader: imageImageVertexShader,
         fragmentShader: imageFragmentShader,
       }),
-      [texture, displacementStrength, scale, imageSizes]
+      [texture, curveStrength, curveFrequency, scale, imageSizes]
     );
 
     return (

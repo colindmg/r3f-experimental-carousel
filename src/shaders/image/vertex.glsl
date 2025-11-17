@@ -1,26 +1,28 @@
 uniform float uScrollSpeed;
-uniform float uDisplacementStrength;
+uniform float uCurveStrength;
+uniform float uCurveFrequency;
 
 varying vec2 vUv;
-// varying vec3 vWorldPosition;
+varying vec3 vWorldPosition;
 
-// #define PI 3.141592653
+#define PI 3.141592653
 
 void main() {
   vec3 pos = position;
-  // vec3 worldPosition = (modelMatrix * vec4(position, 1.0)).xyz;
+  vec3 worldPosition = (modelMatrix * vec4(position, 1.0)).xyz;
 
   // X Displacement depending on the world position Y
-  // float xDisplacement = uDisplacementStrength * cos(worldPosition.y * 0.4) / 2.0 + 0.3;
-  // pos.x += xDisplacement;
+  float xDisplacement = uCurveStrength * cos(worldPosition.y * uCurveFrequency);
+  pos.x += xDisplacement;
+  pos.x -= uCurveStrength;
 
   // Y Displacement according to the scroll speed
-  // float yDisplacement = -sin(uv.x * PI) * uScrollSpeed * 0.003;
-  // pos.y += yDisplacement;
+  float yDisplacement = -sin(uv.x * PI) * uScrollSpeed;
+  pos.y += yDisplacement;
 
   gl_Position = projectionMatrix * modelViewMatrix * vec4( pos, 1.0 );
 
   // VARYINGS
   vUv = uv;
-  // vWorldPosition = worldPosition;
+  vWorldPosition = worldPosition;
 }
