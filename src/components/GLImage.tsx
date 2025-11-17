@@ -6,7 +6,7 @@ import imageImageVertexShader from "../shaders/image/vertex.glsl?raw";
 
 interface GLImageProps {
   imageUrl?: string;
-  index: number;
+  index?: number;
   scale: [number, number, number];
   displacementStrength?: number;
   yOffset: number;
@@ -17,7 +17,7 @@ const GLImage = forwardRef<THREE.Mesh, GLImageProps>(
   (
     {
       imageUrl = "./images/img1.webp",
-      index,
+      index = 0,
       scale,
       displacementStrength,
       yOffset,
@@ -31,7 +31,7 @@ const GLImage = forwardRef<THREE.Mesh, GLImageProps>(
 
     const imageSizes = useMemo(() => {
       if (!texture) return [1, 1];
-      // @ts-expect-error texture.image is defined
+      // @ts-expect-error ignore
       return [texture.image.width, texture.image.height];
     }, [texture]);
 

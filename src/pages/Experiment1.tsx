@@ -16,10 +16,8 @@ const Experiment1 = () => {
     >
       <OrbitControls />
       <GLImage
-        index={0}
-        scale={[3, 0.8, 1]}
+        scale={[1, 1, 1]}
         yOffset={0}
-        displacementStrength={0.3}
         geometry={new THREE.PlaneGeometry(1, 1)}
       />
     </Canvas>
