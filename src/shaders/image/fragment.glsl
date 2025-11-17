@@ -18,12 +18,7 @@ void main() {
     vUv.y * ratio.y + (1.0 - ratio.y) * 0.5
   );
 
-  // vec3 finalColor = vec3(1. - abs(vWorldPosition.y) * 0.15, 0., 0.);
-  // vec3 finalColor = vec3(clamp(0., 1., vWorldPosition.y + 3.5));
-
   vec4 finalColor = texture2D(uTexture, uv);
   
   gl_FragColor = finalColor;
-  // gl_FragColor.rgb = vec3(finalColor);
-  // gl_FragColor.a = 1.0;
 }

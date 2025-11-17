@@ -4,14 +4,17 @@ const Overlay = () => {
   return (
     <>
       <div className="overlay fixed inset-0 p-8 flex flex-col gap-4 justify-between z-10 pointer-events-none">
-        <h1 className="font-bold italic tracking-tighter">
+        <div className="absolute top-0 left-0 right-0 h-40 bg-linear-to-b from-[#f8f8f8] to-transparent z-5"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-linear-to-t from-[#f8f8f8] to-transparent z-5"></div>
+
+        <h1 className="font-bold italic tracking-tighter z-10">
           R3F EXPERIMENTAL CAROUSEL
         </h1>
-        <div className="uppercase flex gap-5 tracking-tighter pointer-events-auto">
+        <div className="z-10 uppercase flex gap-5 tracking-tighter pointer-events-auto">
           <NavLink
             to="/"
             className={({ isActive }) =>
-              isActive ? "text-neutral-900" : "text-neutral-300"
+              isActive ? "text-neutral-900" : "text-neutral-500"
             }
           >
             Experiment 1
@@ -19,7 +22,7 @@ const Overlay = () => {
           <NavLink
             to="/experiment2"
             className={({ isActive }) =>
-              isActive ? "text-neutral-900" : "text-neutral-300"
+              isActive ? "text-neutral-900" : "text-neutral-500"
             }
           >
             Experiment 2
@@ -27,7 +30,7 @@ const Overlay = () => {
           <NavLink
             to="/experiment3"
             className={({ isActive }) =>
-              isActive ? "text-neutral-900" : "text-neutral-300"
+              isActive ? "text-neutral-900" : "text-neutral-500"
             }
           >
             Experiment 3

@@ -15,7 +15,6 @@ const Experiment1 = () => {
         position: [0, 0, 3],
       }}
     >
-      {/* <OrbitControls /> */}
       <Carousel
         imageSize={[1, 1]}
         gap={0.05}
