@@ -16,7 +16,31 @@ const Experiment1 = () => {
       }}
     >
       {/* <OrbitControls /> */}
-      <Carousel imageSize={[1, 1]} gap={0.1} />
+      <Carousel
+        imageSize={[1, 1]}
+        gap={0.05}
+        curveFrequency={0.4}
+        curveStrength={1}
+        wheelFactor={0.4}
+      />
+      <Carousel
+        position={[1.1, 0, 0]}
+        imageSize={[1, 1]}
+        gap={0.05}
+        curveFrequency={0.4}
+        curveStrength={1}
+        wheelFactor={0.5}
+        wheelDirection={-1}
+      />
+      <Carousel
+        position={[-1.1, 0, 0]}
+        imageSize={[1, 1]}
+        gap={0.05}
+        curveFrequency={0.4}
+        curveStrength={1}
+        wheelFactor={0.3}
+        wheelDirection={-1}
+      />
     </Canvas>
   );
 };

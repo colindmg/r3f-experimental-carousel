@@ -10,9 +10,21 @@ interface CarouselProps {
   position?: [number, number, number];
   imageSize: [number, number];
   gap: number;
+  wheelFactor?: number;
+  wheelDirection?: 1 | -1;
+  curveStrength?: number;
+  curveFrequency?: number;
 }
 
-const Carousel = ({ position, imageSize, gap }: CarouselProps) => {
+const Carousel = ({
+  position,
+  imageSize,
+  gap,
+  wheelFactor = 1,
+  wheelDirection = 1,
+  curveStrength = 0,
+  curveFrequency = 0,
+}: CarouselProps) => {
   const imageRefs = useRef<THREE.Mesh[]>([]);
 
   const planeGeometry = useMemo(() => {
@@ -33,9 +45,10 @@ const Carousel = ({ position, imageSize, gap }: CarouselProps) => {
   useLenis(({ velocity }) => {
     imageRefs.current.forEach((ref) => {
       if (ref) {
-        ref.position.y -= velocity * 0.005;
+        ref.position.y -= velocity * 0.005 * wheelFactor * wheelDirection;
         // @ts-expect-error ignore
-        ref.material.uniforms.uScrollSpeed.value = velocity * 0.005;
+        ref.material.uniforms.uScrollSpeed.value =
+          velocity * 0.005 * wheelFactor * wheelDirection;
       }
     });
   });
@@ -48,8 +61,8 @@ const Carousel = ({ position, imageSize, gap }: CarouselProps) => {
           imageUrl={url}
           scale={[imageSize[0], imageSize[1], 1]}
           geometry={planeGeometry}
-          curveStrength={-1.5}
-          curveFrequency={0.4}
+          curveStrength={curveStrength}
+          curveFrequency={curveFrequency}
           position={[0, index * (imageSize[1] + gap), 0]}
           ref={(el) => {
             if (el) imageRefs.current[index] = el;
