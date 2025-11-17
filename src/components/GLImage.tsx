@@ -6,10 +6,9 @@ import imageImageVertexShader from "../shaders/image/vertex.glsl?raw";
 
 interface GLImageProps {
   imageUrl?: string;
-  index?: number;
   scale: [number, number, number];
+  position?: [number, number, number];
   displacementStrength?: number;
-  yOffset: number;
   geometry: THREE.PlaneGeometry;
 }
 
@@ -17,10 +16,9 @@ const GLImage = forwardRef<THREE.Mesh, GLImageProps>(
   (
     {
       imageUrl = "./images/img1.webp",
-      index = 0,
       scale,
+      position = [0, 0, 0],
       displacementStrength,
-      yOffset,
       geometry,
     },
     forwardedRef
@@ -54,11 +52,7 @@ const GLImage = forwardRef<THREE.Mesh, GLImageProps>(
     );
 
     return (
-      <mesh
-        position={[0, index * scale[1] + yOffset, 0]}
-        ref={imageRef}
-        scale={scale}
-      >
+      <mesh position={position} ref={imageRef} scale={scale}>
         <primitive object={geometry} attach="geometry" />
         <shaderMaterial {...shaderArgs} />
       </mesh>

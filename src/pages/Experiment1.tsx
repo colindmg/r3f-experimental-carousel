@@ -1,7 +1,6 @@
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import * as THREE from "three";
-import GLImage from "../components/GLImage";
+import Carousel from "../components/Carousel";
 
 const Experiment1 = () => {
   return (
@@ -15,11 +14,7 @@ const Experiment1 = () => {
       }}
     >
       <OrbitControls />
-      <GLImage
-        scale={[1, 1, 1]}
-        yOffset={0}
-        geometry={new THREE.PlaneGeometry(1, 1)}
-      />
+      <Carousel imageSize={[1, 1]} gap={0.1} />
     </Canvas>
   );
 };
