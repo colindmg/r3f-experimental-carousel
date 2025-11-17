@@ -48,8 +48,8 @@ const Carousel = ({ position, imageSize, gap }: CarouselProps) => {
           imageUrl={url}
           scale={[imageSize[0], imageSize[1], 1]}
           geometry={planeGeometry}
-          curveStrength={-0.5}
-          curveFrequency={2}
+          curveStrength={-1.5}
+          curveFrequency={0.4}
           position={[0, index * (imageSize[1] + gap), 0]}
           ref={(el) => {
             if (el) imageRefs.current[index] = el;
