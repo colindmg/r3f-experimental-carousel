@@ -5,7 +5,6 @@ uniform vec2 uPlaneSizes;
 uniform vec2 uImageSizes;
 
 varying vec2 vUv;
-varying vec3 vWorldPosition;
 
 void main() {
   // Calculate the proper UVs to cover the plane with the image while keeping its aspect ratio

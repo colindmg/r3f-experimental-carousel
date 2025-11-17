@@ -3,7 +3,6 @@ uniform float uCurveStrength;
 uniform float uCurveFrequency;
 
 varying vec2 vUv;
-varying vec3 vWorldPosition;
 
 #define PI 3.141592653
 
@@ -24,5 +23,4 @@ void main() {
 
   // VARYINGS
   vUv = uv;
-  vWorldPosition = worldPosition;
 }
