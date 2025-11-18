@@ -6,6 +6,9 @@ const Overlay = () => {
       <div className="overlay fixed inset-0 p-8 flex flex-col gap-4 justify-between z-10 pointer-events-none">
         <div className="absolute top-0 left-0 right-0 h-40 bg-linear-to-b from-[#f8f8f8] to-transparent z-5"></div>
         <div className="absolute bottom-0 left-0 right-0 h-40 bg-linear-to-t from-[#f8f8f8] to-transparent z-5"></div>
+        <div className="absolute left-0 bottom-0 top-0 w-40 bg-linear-to-r from-[#f8f8f8] to-transparent z-5"></div>
+        <div className="absolute right-0 bottom-0 top-0 w-40 bg-linear-to-l from-[#f8f8f8] to-transparent z-5"></div>
+
 
         <div className="z-10 flex justify-between w-full">
           <div>
@@ -93,6 +96,14 @@ const Overlay = () => {
             }
           >
             Experiment 4
+          </NavLink>
+          <NavLink
+            to="/experiment5"
+            className={({ isActive }) =>
+              isActive ? "text-neutral-900" : "text-neutral-500"
+            }
+          >
+            Experiment 5
           </NavLink>
         </div>
       </div>

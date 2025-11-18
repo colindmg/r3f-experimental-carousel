@@ -3,6 +3,9 @@ import { forwardRef, useMemo, useRef } from "react";
 import * as THREE from "three";
 import imageFragmentShader from "../shaders/image/fragment.glsl?raw";
 import imageImageVertexShader from "../shaders/image/vertex.glsl?raw";
+import horizontalImageImageVertexShader from "../shaders/horizontal-image/vertex.glsl?raw";
+import horizontalImageImageFragmentShader from "../shaders/horizontal-image/fragment.glsl?raw";
+
 
 interface GLImageProps {
   imageUrl?: string;
@@ -11,6 +14,7 @@ interface GLImageProps {
   curveStrength?: number;
   curveFrequency?: number;
   geometry: THREE.PlaneGeometry;
+  direction?: "vertical" | "horizontal";
 }
 
 const GLImage = forwardRef<THREE.Mesh, GLImageProps>(
@@ -22,6 +26,7 @@ const GLImage = forwardRef<THREE.Mesh, GLImageProps>(
       curveStrength,
       curveFrequency,
       geometry,
+      direction = "vertical",
     },
     forwardedRef
   ) => {
@@ -48,8 +53,8 @@ const GLImage = forwardRef<THREE.Mesh, GLImageProps>(
           uCurveStrength: { value: curveStrength || 0 },
           uCurveFrequency: { value: curveFrequency || 0 },
         },
-        vertexShader: imageImageVertexShader,
-        fragmentShader: imageFragmentShader,
+        vertexShader: direction === "vertical" ? imageImageVertexShader : horizontalImageImageVertexShader,
+        fragmentShader: direction === "vertical" ? imageFragmentShader : horizontalImageImageFragmentShader,
       }),
       [texture, curveStrength, curveFrequency, scale, imageSizes]
     );

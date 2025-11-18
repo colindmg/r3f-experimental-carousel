@@ -15,6 +15,7 @@ interface CarouselProps {
   wheelDirection?: 1 | -1;
   curveStrength?: number;
   curveFrequency?: number;
+  direction?: "vertical" | "horizontal";
 }
 
 const Carousel = ({
@@ -26,6 +27,7 @@ const Carousel = ({
   wheelDirection = 1,
   curveStrength = 0,
   curveFrequency = 0,
+  direction = "vertical",
 }: CarouselProps) => {
   const imageRefs = useRef<THREE.Mesh[]>([]);
 
@@ -35,24 +37,44 @@ const Carousel = ({
 
   const totalHeight =
     IMAGE_LIST.length * gap + IMAGE_LIST.length * imageSize[1];
+  const totalWidth = IMAGE_LIST.length * gap + IMAGE_LIST.length * imageSize[0];
 
   useFrame(() => {
-    imageRefs.current.forEach((ref) => {
-      if (!ref) return;
-      ref.position.y =
-        mod(ref.position.y + totalHeight / 2, totalHeight) - totalHeight / 2;
-    });
+    if (direction === "vertical") {
+      imageRefs.current.forEach((ref) => {
+        if (!ref) return;
+        ref.position.y =
+          mod(ref.position.y + totalHeight / 2, totalHeight) - totalHeight / 2;
+      });
+    } else {
+      imageRefs.current.forEach((ref) => {
+        if (!ref) return;
+        ref.position.x =
+          mod(ref.position.x + totalWidth / 2, totalWidth) - totalWidth / 2;
+      });
+    }
   });
 
   useLenis(({ velocity }) => {
-    imageRefs.current.forEach((ref) => {
-      if (ref) {
-        ref.position.y -= velocity * 0.005 * wheelFactor * wheelDirection;
-        // @ts-expect-error ignore
-        ref.material.uniforms.uScrollSpeed.value =
-          velocity * 0.005 * wheelFactor * wheelDirection;
-      }
-    });
+    if (direction === "vertical") {
+      imageRefs.current.forEach((ref) => {
+        if (ref) {
+          ref.position.y -= velocity * 0.005 * wheelFactor * wheelDirection;
+          // @ts-expect-error ignore
+          ref.material.uniforms.uScrollSpeed.value =
+            velocity * 0.005 * wheelFactor * wheelDirection;
+        }
+      });
+    } else {
+      imageRefs.current.forEach((ref) => {
+        if (ref) {
+          ref.position.x += velocity * 0.005 * wheelFactor * wheelDirection;
+          // @ts-expect-error ignore
+          ref.material.uniforms.uScrollSpeed.value =
+            -velocity * 0.005 * wheelFactor * wheelDirection;
+        }
+      });
+    }
   });
 
   return (
@@ -65,10 +87,11 @@ const Carousel = ({
           geometry={planeGeometry}
           curveStrength={curveStrength}
           curveFrequency={curveFrequency}
-          position={[0, index * (imageSize[1] + gap), 0]}
+          position={direction === "vertical" ?[0, index * (imageSize[1] + gap), 0] : [index * (imageSize[0] + gap), 0, 0]}
           ref={(el) => {
             if (el) imageRefs.current[index] = el;
           }}
+          direction={direction}
         />
       ))}
     </group>
