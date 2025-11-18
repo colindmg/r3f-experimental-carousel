@@ -56,7 +56,7 @@ const GLImage = forwardRef<THREE.Mesh, GLImageProps>(
         vertexShader: direction === "vertical" ? imageImageVertexShader : horizontalImageImageVertexShader,
         fragmentShader: direction === "vertical" ? imageFragmentShader : horizontalImageImageFragmentShader,
       }),
-      [texture, curveStrength, curveFrequency, scale, imageSizes]
+      [texture, direction, curveStrength, curveFrequency, scale, imageSizes]
     );
 
     return (
