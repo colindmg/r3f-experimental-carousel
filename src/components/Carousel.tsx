@@ -8,6 +8,7 @@ import GLImage from "./GLImage";
 
 interface CarouselProps {
   position?: [number, number, number];
+  rotation?: [number, number, number];
   imageSize: [number, number];
   gap: number;
   wheelFactor?: number;
@@ -18,6 +19,7 @@ interface CarouselProps {
 
 const Carousel = ({
   position,
+  rotation,
   imageSize,
   gap,
   wheelFactor = 1,
@@ -54,7 +56,7 @@ const Carousel = ({
   });
 
   return (
-    <group position={position || [0, 0, 0]}>
+    <group position={position || [0, 0, 0]} rotation={rotation || [0, 0, 0]}>
       {IMAGE_LIST.map((url, index) => (
         <GLImage
           key={index}

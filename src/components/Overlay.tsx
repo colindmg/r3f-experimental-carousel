@@ -86,6 +86,14 @@ const Overlay = () => {
           >
             Experiment 3
           </NavLink>
+          <NavLink
+            to="/experiment4"
+            className={({ isActive }) =>
+              isActive ? "text-neutral-900" : "text-neutral-500"
+            }
+          >
+            Experiment 4
+          </NavLink>
         </div>
       </div>
       <Outlet />

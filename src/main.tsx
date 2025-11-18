@@ -7,6 +7,7 @@ import "./index.css";
 import Experiment1 from "./pages/Experiment1.tsx";
 import Experiment2 from "./pages/Experiment2.tsx";
 import Experiment3 from "./pages/Experiment3.tsx";
+import Experiment4 from "./pages/Experiment4.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -18,6 +19,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="experiment1" element={<Experiment1 />} />
           <Route path="experiment2" element={<Experiment2 />} />
           <Route path="experiment3" element={<Experiment3 />} />
+          <Route path="experiment4" element={<Experiment4 />} />
         </Route>
       </Routes>
     </BrowserRouter>
