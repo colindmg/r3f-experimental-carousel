@@ -11,6 +11,18 @@ const IMAGE_LIST: string[] = [
   "./images/img10.webp",
   "./images/img11.webp",
   "./images/img12.webp",
+  "./images/img1.webp",
+  "./images/img2.webp",
+  "./images/img3.webp",
+  "./images/img4.webp",
+  "./images/img5.webp",
+  "./images/img6.webp",
+  "./images/img7.webp",
+  "./images/img8.webp",
+  "./images/img9.webp",
+  "./images/img10.webp",
+  "./images/img11.webp",
+  "./images/img12.webp",
 ];
 
 export { IMAGE_LIST };

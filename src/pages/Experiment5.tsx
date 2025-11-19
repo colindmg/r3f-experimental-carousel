@@ -23,7 +23,7 @@ const Experiment5 = () => {
             <Carousel
               position={[0, -0.8, 0]}
               imageSize={[1, 1]}
-              gap={0.05}
+              gap={0}
               wheelFactor={0.4}
               direction={"horizontal"}
               curveFrequency={0.9}
@@ -33,7 +33,7 @@ const Experiment5 = () => {
             <Carousel
               position={[0, 0, 0]}
               imageSize={[1, 1]}
-              gap={0.05}
+              gap={0}
               wheelFactor={0.3}
               direction={"horizontal"}
               curveFrequency={1}
@@ -43,7 +43,7 @@ const Experiment5 = () => {
             <Carousel
               position={[0, 0.8, 0]}
               imageSize={[1, 1]}
-              gap={0.05}
+              gap={0}
               wheelFactor={0.2}
               direction={"horizontal"}
               curveFrequency={1.1}

@@ -20,7 +20,7 @@ const Experiment4 = () => {
       >
         <Suspense fallback={null}>
           <Carousel
-            imageSize={[0.3, 1]}
+            imageSize={[0.3, 0.4]}
             gap={0}
             wheelFactor={0.4}
             position={[0, 0, 0]}
@@ -28,7 +28,7 @@ const Experiment4 = () => {
             curveStrength={-1}
           />
           <Carousel
-            imageSize={[0.3, 1]}
+            imageSize={[0.3, 0.4]}
             gap={0}
             wheelFactor={0.3}
             position={[0, 0, 0]}
@@ -37,7 +37,7 @@ const Experiment4 = () => {
             curveFrequency={0.5}
           />
           <Carousel
-            imageSize={[0.3, 1]}
+            imageSize={[0.3, 0.4]}
             gap={0}
             wheelFactor={0.2}
             position={[2, 0, 0]}
@@ -46,7 +46,7 @@ const Experiment4 = () => {
             curveFrequency={0.5}
           />
           <Carousel
-            imageSize={[0.3, 1]}
+            imageSize={[0.3, 0.4]}
             gap={0}
             wheelFactor={0.5}
             position={[-2, 0, 0]}
@@ -55,7 +55,7 @@ const Experiment4 = () => {
             curveFrequency={0.5}
           />
           <Carousel
-            imageSize={[0.3, 1]}
+            imageSize={[0.3, 0.4]}
             gap={0}
             wheelFactor={0.35}
             position={[2, 0, 0]}
@@ -64,7 +64,7 @@ const Experiment4 = () => {
             curveFrequency={0.3}
           />
           <Carousel
-            imageSize={[0.3, 1]}
+            imageSize={[0.3, 0.4]}
             gap={0}
             wheelFactor={0.45}
             position={[-1.7, 0, 0]}
