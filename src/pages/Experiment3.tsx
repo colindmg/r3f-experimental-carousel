@@ -16,7 +16,7 @@ const Experiment3 = () => {
         }}
         camera={{
           position: [0, 0, 3],
-          rotation: [0, 0, Math.PI / 7],
+          rotation: [0, 0, Math.PI / 5],
         }}
       >
         <Suspense fallback={null}>
@@ -24,7 +24,7 @@ const Experiment3 = () => {
             imageSize={[0.8, 1]}
             gap={0}
             wheelFactor={0.2}
-            position={[-1.4, 0, 0]}
+            position={[-1.2, 0, 0]}
             curveFrequency={0.4}
             curveStrength={0.9}
           />
@@ -32,7 +32,7 @@ const Experiment3 = () => {
             imageSize={[0.8, 1]}
             gap={0}
             wheelFactor={0.3}
-            position={[-0.7, 0, 0]}
+            position={[-0.6, 0, 0]}
             curveFrequency={0.4}
             curveStrength={0.6}
           />
@@ -41,7 +41,7 @@ const Experiment3 = () => {
             imageSize={[0.8, 1]}
             gap={0}
             wheelFactor={0.5}
-            position={[0.7, 0, 0]}
+            position={[0.6, 0, 0]}
             curveFrequency={0.4}
             curveStrength={-0.6}
           />
@@ -49,7 +49,7 @@ const Experiment3 = () => {
             imageSize={[0.8, 1]}
             gap={0}
             wheelFactor={0.6}
-            position={[1.4, 0, 0]}
+            position={[1.2, 0, 0]}
             curveFrequency={0.4}
             curveStrength={-0.9}
           />
