@@ -64,7 +64,7 @@ const Overlay = () => {
             </a>
           </nav>
         </div>
-        <div className="z-10 uppercase flex gap-5 tracking-tighter pointer-events-auto">
+        <div className="z-10 uppercase flex flex-wrap gap-5 tracking-tighter pointer-events-auto">
           <NavLink
             to="/"
             className={({ isActive }) =>
@@ -104,6 +104,14 @@ const Overlay = () => {
             }
           >
             Experiment 5
+          </NavLink>
+          <NavLink
+            to="/experiment6"
+            className={({ isActive }) =>
+              isActive ? "text-neutral-900" : "text-neutral-500"
+            }
+          >
+            Experiment 6
           </NavLink>
         </div>
       </div>

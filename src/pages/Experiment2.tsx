@@ -39,8 +39,8 @@ const Experiment2 = () => {
           />
 
           <Carousel
-            imageSize={[1, 1.5]}
-            gap={0.05}
+            imageSize={[1.6, 1]}
+            gap={0.1}
             position={[0, 0, 0]}
             curveFrequency={0}
             curveStrength={0}
