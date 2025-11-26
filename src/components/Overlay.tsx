@@ -19,7 +19,7 @@ const Overlay = () => {
               <a target="_blank" href="#">
                 Article
               </a>
-              <a target="_blank" href="https://tympanus.net/codrops/demos/">
+              <a target="_blank" href="https://tympanus.net/codrops/hub/">
                 All demos
               </a>
               <a

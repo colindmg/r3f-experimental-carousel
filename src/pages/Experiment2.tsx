@@ -1,14 +1,14 @@
-import { Loader } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import { Suspense } from "react";
-import Carousel from "../components/Carousel";
+import { Loader } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
+import { Suspense } from 'react';
+import Carousel from '../components/Carousel';
 
 const Experiment2 = () => {
   return (
     <>
       <Canvas
         style={{
-          position: "fixed",
+          position: 'fixed',
           top: 0,
           bottom: 0,
           left: 0,
@@ -20,7 +20,7 @@ const Experiment2 = () => {
       >
         <Suspense fallback={null}>
           <Carousel
-            imageSize={[2, 0.4]}
+            imageSize={[2, 0.6]}
             gap={0.1}
             position={[2.5, 0, 0]}
             curveFrequency={0.3}
@@ -29,7 +29,7 @@ const Experiment2 = () => {
             wheelDirection={-1}
           />
           <Carousel
-            imageSize={[2, 0.4]}
+            imageSize={[2, 0.6]}
             gap={0.1}
             position={[-2.5, 0, 0]}
             curveFrequency={0.3}
