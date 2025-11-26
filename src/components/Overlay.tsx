@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router";
+import { NavLink, Outlet } from 'react-router';
 
 const Overlay = () => {
   return (
@@ -9,12 +9,9 @@ const Overlay = () => {
         <div className="absolute left-0 bottom-0 top-0 w-40 bg-linear-to-r from-[#f8f8f8] to-transparent z-5"></div>
         <div className="absolute right-0 bottom-0 top-0 w-40 bg-linear-to-l from-[#f8f8f8] to-transparent z-5"></div>
 
-
         <div className="z-10 flex justify-between w-full">
           <div>
-            <h1 className="font-bold italic tracking-tighter">
-              R3F EXPERIMENTAL CAROUSEL
-            </h1>
+            <h1 className="font-bold italic tracking-tighter">R3F EXPERIMENTAL CAROUSEL</h1>
             <div className="flex gap-3 items-center pointer-events-auto">
               <a target="_blank" href="#">
                 Article
@@ -22,95 +19,44 @@ const Overlay = () => {
               <a target="_blank" href="https://tympanus.net/codrops/hub/">
                 All demos
               </a>
-              <a
-                target="_blank"
-                href="https://github.com/colindmg/r3f-experimental-carousel"
-              >
+              <a target="_blank" href="https://github.com/colindmg/r3f-experimental-carousel">
                 GitHub
               </a>
             </div>
           </div>
 
           <nav className="flex flex-col gap-2 pointer-events-auto text-sm items-end">
-            <a
-              target="_blank"
-              href="https://tympanus.net/codrops/demos/?tag=react-three-fiber"
-            >
-              #react-three-fiber
+            <a target="_blank" href="https://tympanus.net/codrops/hub/tag/carousel/">
+              #carousel
             </a>
-            <a
-              target="_blank"
-              href="https://tympanus.net/codrops/demos/?tag=three-js"
-            >
-              #three-js
+            <a target="_blank" href="https://tympanus.net/codrops/hub/tag/three-js/">
+              #three.js
             </a>
-            <a
-              target="_blank"
-              href="https://tympanus.net/codrops/demos/?tag=shader"
-            >
-              #shader
+            <a target="_blank" href="https://tympanus.net/codrops/hub/tag/webgl/">
+              #webgl
             </a>
-            <a
-              target="_blank"
-              href="https://tympanus.net/codrops/demos/?tag=glsl"
-            >
-              #glsl
-            </a>
-            <a
-              target="_blank"
-              href="https://tympanus.net/codrops/demos/?tag=3d"
-            >
-              #3d
+            <a target="_blank" href="https://tympanus.net/codrops/hub/tag/react-three-fiber/">
+              #r3f
             </a>
           </nav>
         </div>
         <div className="z-10 uppercase flex flex-wrap gap-5 tracking-tighter pointer-events-auto">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              isActive ? "text-neutral-900" : "text-neutral-500"
-            }
-          >
+          <NavLink to="/" className={({ isActive }) => (isActive ? 'text-neutral-900' : 'text-neutral-500')}>
             Experiment 1
           </NavLink>
-          <NavLink
-            to="/experiment2"
-            className={({ isActive }) =>
-              isActive ? "text-neutral-900" : "text-neutral-500"
-            }
-          >
+          <NavLink to="/experiment2" className={({ isActive }) => (isActive ? 'text-neutral-900' : 'text-neutral-500')}>
             Experiment 2
           </NavLink>
-          <NavLink
-            to="/experiment3"
-            className={({ isActive }) =>
-              isActive ? "text-neutral-900" : "text-neutral-500"
-            }
-          >
+          <NavLink to="/experiment3" className={({ isActive }) => (isActive ? 'text-neutral-900' : 'text-neutral-500')}>
             Experiment 3
           </NavLink>
-          <NavLink
-            to="/experiment4"
-            className={({ isActive }) =>
-              isActive ? "text-neutral-900" : "text-neutral-500"
-            }
-          >
+          <NavLink to="/experiment4" className={({ isActive }) => (isActive ? 'text-neutral-900' : 'text-neutral-500')}>
             Experiment 4
           </NavLink>
-          <NavLink
-            to="/experiment5"
-            className={({ isActive }) =>
-              isActive ? "text-neutral-900" : "text-neutral-500"
-            }
-          >
+          <NavLink to="/experiment5" className={({ isActive }) => (isActive ? 'text-neutral-900' : 'text-neutral-500')}>
             Experiment 5
           </NavLink>
-          <NavLink
-            to="/experiment6"
-            className={({ isActive }) =>
-              isActive ? "text-neutral-900" : "text-neutral-500"
-            }
-          >
+          <NavLink to="/experiment6" className={({ isActive }) => (isActive ? 'text-neutral-900' : 'text-neutral-500')}>
             Experiment 6
           </NavLink>
         </div>

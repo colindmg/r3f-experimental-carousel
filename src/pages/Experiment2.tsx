@@ -20,7 +20,7 @@ const Experiment2 = () => {
       >
         <Suspense fallback={null}>
           <Carousel
-            imageSize={[2, 0.6]}
+            imageSize={[1.8, 0.6]}
             gap={0.1}
             position={[2.5, 0, 0]}
             curveFrequency={0.3}
@@ -29,7 +29,7 @@ const Experiment2 = () => {
             wheelDirection={-1}
           />
           <Carousel
-            imageSize={[2, 0.6]}
+            imageSize={[1.8, 0.6]}
             gap={0.1}
             position={[-2.5, 0, 0]}
             curveFrequency={0.3}
