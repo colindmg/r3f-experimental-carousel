@@ -2,11 +2,11 @@
 
 _Creating a wavy infinite carousel with React Three Fiber._
 
-![Thumbnail](./public/thumbnail.png)
+![Thumbnail](https://tympanus.net/codrops/wp-content/uploads/2025/11/Carousel_Featured.jpg)
 
-[Article on Codrops](https://tympanus.net/codrops/?p=)
+[Article on Codrops](https://tympanus.net/codrops/?p=104645)
 
-[Demo](https://tympanus.net/Tutorials/.../)
+[Demo](https://tympanus.net/Tutorials/R3FExperimentalCarousels)
 
 ## Installation
 
