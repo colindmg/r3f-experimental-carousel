@@ -13,7 +13,7 @@ const Overlay = () => {
           <div>
             <h1 className="font-bold italic tracking-tighter">R3F EXPERIMENTAL CAROUSEL</h1>
             <div className="flex gap-3 items-center pointer-events-auto">
-              <a target="_blank" href="#">
+              <a target="_blank" href="https://tympanus.net/codrops/2025/11/26/creating-wavy-infinite-carousels-in-react-three-fiber-with-glsl-shaders/">
                 Article
               </a>
               <a target="_blank" href="https://tympanus.net/codrops/hub/">

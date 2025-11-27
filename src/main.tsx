@@ -13,7 +13,7 @@ import Experiment6 from "./pages/Experiment6.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <ReactLenis root options={{ infinite: true }} />
+    <ReactLenis root options={{ infinite: true, syncTouch: true }} />
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Overlay />}>
